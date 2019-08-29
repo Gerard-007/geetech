@@ -1,0 +1,6 @@
+Django==2.2.0
+Pillow==4.2.1
+djangorestframework
+django-cloudinary-storage
+whitenoise
+django-crispy-forms

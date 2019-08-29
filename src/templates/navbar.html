@@ -1,0 +1,51 @@
+{% url 'contact' as contact %}
+
+{% if request.path == contact %}
+    <nav class="navbar navbar-default navbar-fixed-top">
+{% else %}
+    <nav class="navbar navbar-default navbar-transparent navbar-fixed-top" color-on-scroll="200">
+    <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
+{% endif %}
+
+    <div class="container">
+        <div class="navbar-header">
+            <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar bar1"></span>
+                <span class="icon-bar bar2"></span>
+                <span class="icon-bar bar3"></span>
+            </button>
+            <a href="{% url 'home' %}" class="navbar-brand">
+                GTLab
+            </a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right navbar-uppercase">
+                <li>
+                    <a href="{% url 'home' %}">Home</a>
+                </li>
+
+                <li>
+                    <a href="{% url 'contact' %}">contact_us</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#gaia" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-share-alt"></i> Share
+                    </a>
+                    <ul class="dropdown-menu dropdown-danger">
+                        <li>
+                            <a id="facebookNav" href="#"><i class="fa fa-facebook-square"></i> Facebook</a>
+                        </li>
+                        <li>
+                            <a id="twitterNav" href="#"><i class="fa fa-twitter"></i> Twitter</a>
+                        </li>
+                        <li>
+                            <a id="googleNav" href="#"><i class="fa fa-google-plus"></i> Google</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</nav>

@@ -1,0 +1,96 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}contact_us{% endblock title %}
+
+{% block content %}
+<div class="wrapper">
+    <div class="section section-contact-form">
+        <div class="container">
+            <div class="title-area">
+                <h5 class="subtitle text-gray">Glad to Talk With You</h5>
+                <h2>Contact Us</h2>
+                <div class="separator separator-danger">✻</div>
+                <p class="description">In this area you can write some interesting description about the projects that your team created. Don't forget to add some awesome images under this description, like the beautiful ones that we added.</p>
+            </div>
+
+            <div class="social-buttons">
+                <button class="btn btn-social btn-simple"><i class="fa fa-facebook-square"></i></button>
+                <button class="btn btn-social btn-simple"><i class="fa fa-twitter"></i></button>
+                <button class="btn btn-social btn-simple"><i class="fa fa-instagram"></i></button>
+                <button class="btn btn-social btn-simple"><i class="fa fa-google" ></i></button>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="contact-form">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                {% if messages %}
+                                    <div class="alert alert-success">
+                                        {% for msg in messages %}
+                                        <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ msg }}</div>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        {{ form.name|as_crispy_field }}
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        {{ form.email|as_crispy_field }}
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        {{ form.phone|as_crispy_field }}
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        {{ form.category|as_crispy_field }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form.description|as_crispy_field }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form.message|as_crispy_field }}
+                                    </div>
+                                    <div>
+                                        <div class="col-md-2 col-md-offset-5">
+                                            <input type="submit" value="Contact us" class="btn btn-danger btn-fill">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-contact-us">
+        <div class="contact-container">
+            <div class="address-container ">
+                <div class="address">
+                    <h4>Where to meet ?</h4>
+                    <p class="text-gray">
+                        Lagos<br>
+                        Surulere Abel, 12<br>
+                        Nigeria
+                    </p>
+                    <h4>Phone</h4>
+                    <p class="text-gray">+234-8186612324</p>
+                </div>
+            </div>
+            <div class="map">
+                <div data-lat="44.433530" data-lng="26.093928" class="google-map big-map"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
