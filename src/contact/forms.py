@@ -4,13 +4,13 @@ from crispy_forms.layout import Layout, Submit, Row, Column
 
 SERVICES = (
     ('', 'Choose services'),
-    ('Just a message', 'Just a mesage.'),
-    ('A complaint', 'I want to make a complaint'),
-    ('Web development', 'I need geetech team to build a web app for my team'),
+    ('Just a message', 'Do you wish wite to us?...'),
+    ('A complaint', 'Do you to make a complaint?...'),
+    ('Web development', 'Do you need our team to build a website for you?'),
     # ('Destop app development', 'I need geetech team to build a desktop app for my team'),
     # ('Mobile app development', 'I need geetech team to build a mobile app for my team'),
-    ('Web site upgrade', 'I want to upgrade my existing website'),
-    ('Web site Management', 'I want your team to manage my existing website')
+    ('Web site upgrade', 'Do you need our team to upgrade your existing website?...'),
+    ('Web site Management', 'Do you need our team to manage your existing website?...')
 )
 
 class ContactForm(forms.Form):
@@ -18,7 +18,7 @@ class ContactForm(forms.Form):
     email = forms.EmailField(label='Your email', required = True, max_length = 100, widget=forms.TextInput(attrs={'placeholder': 'example@email.com'}))
     phone = forms.RegexField(label='Your phone number', regex=r'^\+?1?\d{11,13}$', widget=forms.TextInput(attrs={'placeholder': '08012345678'}))
     category = forms.ChoiceField(label='', choices=SERVICES)
-    description = forms.CharField(label='Your description', required = True, max_length = 300, widget=forms.TextInput(attrs={'placeholder': 'Brief description of what you need us to do for you'}))
+    description = forms.CharField(label='Service description', required = True, max_length = 300, widget=forms.TextInput(attrs={'placeholder': 'Brief description of what you need us to do for you'}))
     message = forms.CharField(label='Your message', widget=forms.Textarea)
 
     # def __init__(self, *args, **kwargs):

@@ -57,6 +57,8 @@ INSTALLED_APPS = [
 
     #My apps
     'geetechlab',
+    'contact',
+    'about',
 ]
 
 MIDDLEWARE = [

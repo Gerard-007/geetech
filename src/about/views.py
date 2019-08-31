@@ -1,7 +1,7 @@
 from django.views.generic import View
 from django.shortcuts import render
 
-class HomeView(View):
+class AboutView(View):
 
     def get(self, request):
-        return render(request, 'base.html')
+        return render(request, 'about.html')

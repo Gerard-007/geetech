@@ -17,14 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 from contact.views import ContactView
+from about.views import AboutView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.AboutView.as_view(), name='home'),
+    path('geetechlab@admin/', admin.site.urls),
+    path('', views.HomeView.as_view(), name='home'),
     path('contact', ContactView.as_view(), name='contact'),
+    path('about', AboutView.as_view(), name='about'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
