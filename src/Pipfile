@@ -6,12 +6,13 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-pillow = "==4.2.1"
 djangorestframework = "*"
 django-cloudinary-storage = "*"
 whitenoise = "*"
 django-crispy-forms = "*"
 Django = "==2.2.0"
+Pillow = "==4.2.1"
+django-heroku = "*"
 
 [requires]
 python_version = "3.6"

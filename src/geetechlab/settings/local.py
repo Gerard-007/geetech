@@ -14,6 +14,7 @@ import os
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+import django_heroku
 
 
 CLOUDINARY_STORAGE = {
@@ -161,3 +162,8 @@ CRISPY_CLASS_CONVERTERS = {
     'passwordinput': "form-control form-control-plain",
     'select': "form-control form-control-plain",
 }
+
+
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())

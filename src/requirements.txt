@@ -4,3 +4,4 @@ djangorestframework
 django-cloudinary-storage
 whitenoise
 django-crispy-forms
+django-heroku
