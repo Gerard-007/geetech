@@ -10,7 +10,7 @@ djangorestframework = "*"
 django-cloudinary-storage = "*"
 whitenoise = "*"
 django-crispy-forms = "*"
-Django = "==2.2.0"
+Django = "==2.2.8"
 Pillow = "==4.2.1"
 django-heroku = "*"
 
